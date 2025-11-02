@@ -1,0 +1,39 @@
+[2025-11-02T19:22:55.810+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-02T19:22:55.838+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.presentation_models.run_customer_detail scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T19:22:55.845+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.presentation_models.run_customer_detail scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T19:22:55.846+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-11-02T19:22:55.867+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): presentation_models.run_customer_detail> on 2025-11-01 06:00:00+00:00
+[2025-11-02T19:22:55.880+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=12132) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-02T19:22:55.884+0000] {standard_task_runner.py:64} INFO - Started process 12142 to run task
+[2025-11-02T19:22:55.885+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'presentation_models.run_customer_detail', 'scheduled__2025-11-01T06:00:00+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmp9pl5q7z7']
+[2025-11-02T19:22:55.891+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask presentation_models.run_customer_detail
+[2025-11-02T19:22:55.943+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.presentation_models.run_customer_detail scheduled__2025-11-01T06:00:00+00:00 [running]> on host 3ad6f99bc9d3
+[2025-11-02T19:22:56.043+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='presentation_models.run_customer_detail' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T06:00:00+00:00'
+[2025-11-02T19:22:56.045+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-02T19:22:56.060+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-02T19:22:56.060+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt run --select customer_detail--project-dir /opt/***/dbt/bamboo_dbt_project --profiles-dir /opt/***/dbt']
+[2025-11-02T19:22:56.066+0000] {subprocess.py:86} INFO - Output:
+[2025-11-02T19:23:01.361+0000] {subprocess.py:93} INFO - [0m19:23:01  Running with dbt=1.10.13
+[2025-11-02T19:23:01.373+0000] {subprocess.py:93} INFO - [0m19:23:01  Encountered an error:
+[2025-11-02T19:23:01.376+0000] {subprocess.py:93} INFO - Runtime Error
+[2025-11-02T19:23:01.377+0000] {subprocess.py:93} INFO -   Could not find profile named 'bamboo_dbt_project'
+[2025-11-02T19:23:02.176+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-02T19:23:02.178+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-02T19:23:02.187+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-02T19:23:02.191+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_duckdb_run, task_id=presentation_models.run_customer_detail, run_id=scheduled__2025-11-01T06:00:00+00:00, execution_date=20251101T060000, start_date=20251102T192255, end_date=20251102T192302
+[2025-11-02T19:23:02.205+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 25 for task presentation_models.run_customer_detail (Bash command failed. The command returned a non-zero exit code 2.; 12142)
+[2025-11-02T19:23:02.241+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-02T19:23:02.249+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

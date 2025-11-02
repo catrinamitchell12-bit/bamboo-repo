@@ -1,0 +1,26 @@
+[2025-11-02T19:55:02.163+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-02T19:55:02.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_csv_load_script scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T19:55:02.212+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_csv_load_script scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T19:55:02.212+0000] {taskinstance.py:2306} INFO - Starting attempt 4 of 6
+[2025-11-02T19:55:02.226+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_csv_load_script> on 2025-11-01 06:00:00+00:00
+[2025-11-02T19:55:02.238+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=12256) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-02T19:55:02.236+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'run_csv_load_script', 'scheduled__2025-11-01T06:00:00+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpdg5u38ns']
+[2025-11-02T19:55:02.240+0000] {standard_task_runner.py:91} INFO - Job 26: Subtask run_csv_load_script
+[2025-11-02T19:55:02.240+0000] {standard_task_runner.py:64} INFO - Started process 12257 to run task
+[2025-11-02T19:55:02.302+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.run_csv_load_script scheduled__2025-11-01T06:00:00+00:00 [running]> on host 3ad6f99bc9d3
+[2025-11-02T19:55:02.393+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='run_csv_load_script' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T06:00:00+00:00'
+[2025-11-02T19:55:02.394+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-02T19:55:02.410+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-02T19:55:02.411+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "python /opt/***/scripts/csv_load.py || echo 'csv_load.py failed'"]
+[2025-11-02T19:55:02.419+0000] {subprocess.py:86} INFO - Output:
+[2025-11-02T19:55:02.506+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-11-02T19:55:02.507+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/csv_load.py", line 1, in <module>
+[2025-11-02T19:55:02.507+0000] {subprocess.py:93} INFO -     import duckdb
+[2025-11-02T19:55:02.508+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'duckdb'
+[2025-11-02T19:55:02.511+0000] {subprocess.py:93} INFO - csv_load.py failed
+[2025-11-02T19:55:02.512+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-02T19:55:02.512+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-02T19:55:02.529+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_duckdb_run, task_id=run_csv_load_script, run_id=scheduled__2025-11-01T06:00:00+00:00, execution_date=20251101T060000, start_date=20251102T195502, end_date=20251102T195502
+[2025-11-02T19:55:02.555+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-02T19:55:02.577+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T19:55:02.578+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
