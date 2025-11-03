@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_loans
+    description: "Staging model for loan data"
+    tests:
+      - unique:
+          column_name: quote_ref
+      - not_null:
+          column_name: quote_ref
+
+sources:
+  - name: raw
+    tables:
+      - name: prd_customer_daily
+        description: "Raw source table for customer data"

@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Dimensional model for customer data"
+    tests:
+      - unique:
+          column_name: customer_ref
+      - not_null:
+          column_name: customer_ref
+          column_name: load_timestamp
+  - name: dim_applications
+    description: "Dimensional model for application data"
+    tests:
+      - unique:
+          column_name: quote_ref
+      - not_null:
+          column_name: quote_ref
+          column_name: application_ref
+          column_name: load_timestamp
+  - name: fact_quote
+    description: "Dimensional model for a quote creation"
+    tests:
+      - unique:
+          column_name: quote_ref
+      - not_null:
+          column_name: quote_ref
+          column_name: customer_ref
+          column_name: load_timestamp

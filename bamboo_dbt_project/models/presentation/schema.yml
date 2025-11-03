@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: application_agg
+    description: "Aggregated model for application data"
+    tests:
+      - unique:
+          column_name: quote_ref
+      - not_null:
+          column_name: quote_ref
+          column_name: customer_ref
+  - name: customer_detail
+    description: "Model for total customer view"
+    tests:
+      - unique:
+          column_name: customer_ref
+      - not_null:
+          column_name: customer_ref

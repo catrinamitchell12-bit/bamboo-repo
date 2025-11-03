@@ -7229,3 +7229,38 @@
 [2025-11-03T21:47:37.396+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:47:37.395+0000] {dag.py:3089} INFO - Sync 1 DAGs
 [2025-11-03T21:47:37.411+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:47:37.411+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
 [2025-11-03T21:47:37.423+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.072 seconds
+[2025-11-03T21:48:07.728+0000] {processor.py:161} INFO - Started process (PID=1421) to work on /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:07.729+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_dag.py for tasks to queue
+[2025-11-03T21:48:07.734+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:07.733+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:07.768+0000] {processor.py:840} INFO - DAG(s) 'dbt_duckdb_run' retrieved from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:07.834+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:07.833+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-03T21:48:07.860+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:07.860+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
+[2025-11-03T21:48:07.876+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.169 seconds
+[2025-11-03T21:48:38.105+0000] {processor.py:161} INFO - Started process (PID=1426) to work on /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:38.106+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_dag.py for tasks to queue
+[2025-11-03T21:48:38.111+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:38.109+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:38.146+0000] {processor.py:840} INFO - DAG(s) 'dbt_duckdb_run' retrieved from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:48:38.202+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:38.201+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-03T21:48:38.228+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:48:38.227+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
+[2025-11-03T21:48:38.246+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.154 seconds
+[2025-11-03T21:49:08.730+0000] {processor.py:161} INFO - Started process (PID=1431) to work on /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:08.732+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_dag.py for tasks to queue
+[2025-11-03T21:49:08.737+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:08.736+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:08.773+0000] {processor.py:840} INFO - DAG(s) 'dbt_duckdb_run' retrieved from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:08.830+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:08.830+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-03T21:49:08.852+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:08.851+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
+[2025-11-03T21:49:08.865+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.150 seconds
+[2025-11-03T21:49:39.020+0000] {processor.py:161} INFO - Started process (PID=1436) to work on /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:39.021+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_dag.py for tasks to queue
+[2025-11-03T21:49:39.023+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:39.022+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:39.035+0000] {processor.py:840} INFO - DAG(s) 'dbt_duckdb_run' retrieved from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:49:39.061+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:39.060+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-03T21:49:39.074+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:49:39.074+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
+[2025-11-03T21:49:39.086+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.071 seconds
+[2025-11-03T21:50:09.363+0000] {processor.py:161} INFO - Started process (PID=1441) to work on /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:50:09.364+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dbt_dag.py for tasks to queue
+[2025-11-03T21:50:09.367+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:50:09.367+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:50:09.391+0000] {processor.py:840} INFO - DAG(s) 'dbt_duckdb_run' retrieved from /opt/airflow/dags/dbt_dag.py
+[2025-11-03T21:50:09.431+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:50:09.431+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-11-03T21:50:09.453+0000] {logging_mixin.py:188} INFO - [2025-11-03T21:50:09.453+0000] {dag.py:3947} INFO - Setting next_dagrun for dbt_duckdb_run to 2025-11-03 06:00:00+00:00, run_after=2025-11-04 06:00:00+00:00
+[2025-11-03T21:50:09.468+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dbt_dag.py took 0.115 seconds

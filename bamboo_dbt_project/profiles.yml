@@ -1,0 +1,7 @@
+bamboo_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ./my_dbt.duckdb
+      threads: 4

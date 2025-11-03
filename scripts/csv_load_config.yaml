@@ -1,0 +1,5 @@
+CUSTOMER_DAILY:
+  DATABASE_PATH: /opt/airflow/dbt/my_dbt.duckdb
+  SCHEMA: raw
+  FILE_PATH: /opt/airflow/inbound_data/PlataAssignment_Data.csv
+  TABLE_NAME: prd_customer_daily
