@@ -1,0 +1,58 @@
+[2025-11-02T20:23:35.283+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-02T20:23:35.322+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.staging_models.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T20:23:35.331+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.staging_models.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T20:23:35.333+0000] {taskinstance.py:2306} INFO - Starting attempt 8 of 8
+[2025-11-02T20:23:35.347+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): staging_models.run_stg_loans> on 2025-11-01 06:00:00+00:00
+[2025-11-02T20:23:35.370+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=415) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-02T20:23:35.372+0000] {standard_task_runner.py:64} INFO - Started process 420 to run task
+[2025-11-02T20:23:35.372+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'staging_models.run_stg_loans', 'scheduled__2025-11-01T06:00:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpqb41no1q']
+[2025-11-02T20:23:35.377+0000] {standard_task_runner.py:91} INFO - Job 67: Subtask staging_models.run_stg_loans
+[2025-11-02T20:23:35.445+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.staging_models.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [running]> on host 3d0082094d3e
+[2025-11-02T20:23:35.529+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='staging_models.run_stg_loans' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='8' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T06:00:00+00:00'
+[2025-11-02T20:23:35.530+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-02T20:23:35.549+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-02T20:23:35.551+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt run --select stg_loans ']
+[2025-11-02T20:23:35.567+0000] {subprocess.py:86} INFO - Output:
+[2025-11-02T20:23:46.273+0000] {subprocess.py:93} INFO - [0m20:23:46  Running with dbt=1.10.13
+[2025-11-02T20:23:47.328+0000] {subprocess.py:93} INFO - [0m20:23:47  Registered adapter: duckdb=1.9.6
+[2025-11-02T20:23:48.014+0000] {subprocess.py:93} INFO - [0m20:23:48  Unable to do partial parsing because profile has changed
+[2025-11-02T20:23:48.074+0000] {subprocess.py:93} INFO - [0m20:23:48  [[33mWARNING[0m][DuplicateYAMLKeysDeprecation]: Deprecated functionality
+[2025-11-02T20:23:48.075+0000] {subprocess.py:93} INFO - Duplicate key 'column_name' in "<unicode string>", line 11, column 11 in file
+[2025-11-02T20:23:48.076+0000] {subprocess.py:93} INFO - `models/structured/schema.yml`
+[2025-11-02T20:23:51.099+0000] {subprocess.py:93} INFO - [0m20:23:51  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-02T20:23:51.101+0000] {subprocess.py:93} INFO - [0m20:23:51
+[2025-11-02T20:23:51.102+0000] {subprocess.py:93} INFO - [0m20:23:51  Concurrency: 4 threads (target='dev')
+[2025-11-02T20:23:51.104+0000] {subprocess.py:93} INFO - [0m20:23:51
+[2025-11-02T20:23:51.476+0000] {subprocess.py:93} INFO - [0m20:23:51
+[2025-11-02T20:23:51.477+0000] {subprocess.py:93} INFO - [0m20:23:51  Finished running  in 0 hours 0 minutes and 0.37 seconds (0.37s).
+[2025-11-02T20:23:51.478+0000] {subprocess.py:93} INFO - [0m20:23:51  Encountered an error:
+[2025-11-02T20:23:51.479+0000] {subprocess.py:93} INFO - Runtime Error
+[2025-11-02T20:23:51.479+0000] {subprocess.py:93} INFO -   IO Error: Could not set lock on file "/opt/***/dbt/./my_dbt.duckdb": Conflicting lock is held in /usr/local/bin/python3.12 (PID 423). See also https://duckdb.org/docs/stable/connect/concurrency
+[2025-11-02T20:23:51.481+0000] {subprocess.py:93} INFO - [0m20:23:51  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-11-02T20:23:51.483+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-11-02T20:23:51.485+0000] {subprocess.py:93} INFO - - DuplicateYAMLKeysDeprecation: 5 occurrences
+[2025-11-02T20:23:51.485+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-11-02T20:23:51.486+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-11-02T20:23:51.487+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-11-02T20:23:51.487+0000] {subprocess.py:93} INFO - parsing.
+[2025-11-02T20:23:52.523+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2025-11-02T20:23:52.532+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-02T20:23:52.603+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-11-02T20:23:52.638+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_duckdb_run, task_id=staging_models.run_stg_loans, run_id=scheduled__2025-11-01T06:00:00+00:00, execution_date=20251101T060000, start_date=20251102T202335, end_date=20251102T202352
+[2025-11-02T20:23:52.745+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 67 for task staging_models.run_stg_loans (Bash command failed. The command returned a non-zero exit code 2.; 420)
+[2025-11-02T20:23:52.782+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-02T20:23:52.858+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T20:23:52.864+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

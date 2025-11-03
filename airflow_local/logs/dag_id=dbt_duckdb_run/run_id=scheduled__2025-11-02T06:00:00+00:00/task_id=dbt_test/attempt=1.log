@@ -1,0 +1,77 @@
+[2025-11-03T16:56:40.530+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-03T16:56:40.550+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_test scheduled__2025-11-02T06:00:00+00:00 [queued]>
+[2025-11-03T16:56:40.556+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_test scheduled__2025-11-02T06:00:00+00:00 [queued]>
+[2025-11-03T16:56:40.556+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-03T16:56:40.563+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2025-11-02 06:00:00+00:00
+[2025-11-03T16:56:40.567+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=437) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-03T16:56:40.567+0000] {standard_task_runner.py:64} INFO - Started process 438 to run task
+[2025-11-03T16:56:40.567+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'dbt_test', 'scheduled__2025-11-02T06:00:00+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpr7qqorz6']
+[2025-11-03T16:56:40.568+0000] {standard_task_runner.py:91} INFO - Job 124: Subtask dbt_test
+[2025-11-03T16:56:40.593+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.dbt_test scheduled__2025-11-02T06:00:00+00:00 [running]> on host 8b2e3086e3f4
+[2025-11-03T16:56:40.637+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-02T06:00:00+00:00'
+[2025-11-03T16:56:40.637+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-03T16:56:40.647+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-03T16:56:40.647+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt test ']
+[2025-11-03T16:56:40.652+0000] {subprocess.py:86} INFO - Output:
+[2025-11-03T16:56:42.772+0000] {subprocess.py:93} INFO - [0m16:56:42  Running with dbt=1.10.13
+[2025-11-03T16:56:43.044+0000] {subprocess.py:93} INFO - [0m16:56:43  Registered adapter: duckdb=1.9.6
+[2025-11-03T16:56:43.394+0000] {subprocess.py:93} INFO - [0m16:56:43  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-03T16:56:43.396+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.396+0000] {subprocess.py:93} INFO - [0m16:56:43  Concurrency: 4 threads (target='dev')
+[2025-11-03T16:56:43.397+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.564+0000] {subprocess.py:93} INFO - [0m16:56:43  1 of 12 START test not_null_application_agg_customer_ref ....................... [RUN]
+[2025-11-03T16:56:43.564+0000] {subprocess.py:93} INFO - [0m16:56:43  2 of 12 START test not_null_customer_detail_customer_ref ....................... [RUN]
+[2025-11-03T16:56:43.565+0000] {subprocess.py:93} INFO - [0m16:56:43  3 of 12 START test not_null_dim_applications_load_timestamp .................... [RUN]
+[2025-11-03T16:56:43.565+0000] {subprocess.py:93} INFO - [0m16:56:43  4 of 12 START test not_null_dim_customer_load_timestamp ........................ [RUN]
+[2025-11-03T16:56:43.641+0000] {subprocess.py:93} INFO - [0m16:56:43  1 of 12 PASS not_null_application_agg_customer_ref ............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T16:56:43.642+0000] {subprocess.py:93} INFO - [0m16:56:43  2 of 12 PASS not_null_customer_detail_customer_ref ............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T16:56:43.645+0000] {subprocess.py:93} INFO - [0m16:56:43  4 of 12 PASS not_null_dim_customer_load_timestamp .............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T16:56:43.646+0000] {subprocess.py:93} INFO - [0m16:56:43  3 of 12 PASS not_null_dim_applications_load_timestamp .......................... [[32mPASS[0m in 0.08s]
+[2025-11-03T16:56:43.647+0000] {subprocess.py:93} INFO - [0m16:56:43  5 of 12 START test not_null_fact_quote_load_timestamp .......................... [RUN]
+[2025-11-03T16:56:43.648+0000] {subprocess.py:93} INFO - [0m16:56:43  6 of 12 START test not_null_stg_loans_quote_ref ................................ [RUN]
+[2025-11-03T16:56:43.651+0000] {subprocess.py:93} INFO - [0m16:56:43  7 of 12 START test unique_application_agg_customer_ref ......................... [RUN]
+[2025-11-03T16:56:43.652+0000] {subprocess.py:93} INFO - [0m16:56:43  8 of 12 START test unique_customer_detail_customer_ref ......................... [RUN]
+[2025-11-03T16:56:43.700+0000] {subprocess.py:93} INFO - [0m16:56:43  5 of 12 PASS not_null_fact_quote_load_timestamp ................................ [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.704+0000] {subprocess.py:93} INFO - [0m16:56:43  6 of 12 PASS not_null_stg_loans_quote_ref ...................................... [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.707+0000] {subprocess.py:93} INFO - [0m16:56:43  8 of 12 PASS unique_customer_detail_customer_ref ............................... [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.708+0000] {subprocess.py:93} INFO - [0m16:56:43  9 of 12 START test unique_dim_applications_quote_ref ........................... [RUN]
+[2025-11-03T16:56:43.709+0000] {subprocess.py:93} INFO - [0m16:56:43  7 of 12 FAIL 1 unique_application_agg_customer_ref ............................. [[31mFAIL 1[0m in 0.06s]
+[2025-11-03T16:56:43.711+0000] {subprocess.py:93} INFO - [0m16:56:43  10 of 12 START test unique_dim_customer_customer_ref ........................... [RUN]
+[2025-11-03T16:56:43.714+0000] {subprocess.py:93} INFO - [0m16:56:43  11 of 12 START test unique_fact_quote_quote_ref ................................ [RUN]
+[2025-11-03T16:56:43.718+0000] {subprocess.py:93} INFO - [0m16:56:43  12 of 12 START test unique_stg_loans_quote_ref ................................. [RUN]
+[2025-11-03T16:56:43.765+0000] {subprocess.py:93} INFO - [0m16:56:43  9 of 12 PASS unique_dim_applications_quote_ref ................................. [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.766+0000] {subprocess.py:93} INFO - [0m16:56:43  10 of 12 PASS unique_dim_customer_customer_ref ................................. [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.770+0000] {subprocess.py:93} INFO - [0m16:56:43  12 of 12 PASS unique_stg_loans_quote_ref ....................................... [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.771+0000] {subprocess.py:93} INFO - [0m16:56:43  11 of 12 PASS unique_fact_quote_quote_ref ...................................... [[32mPASS[0m in 0.05s]
+[2025-11-03T16:56:43.778+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.778+0000] {subprocess.py:93} INFO - [0m16:56:43  Finished running 12 data tests in 0 hours 0 minutes and 0.38 seconds (0.38s).
+[2025-11-03T16:56:43.813+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.814+0000] {subprocess.py:93} INFO - [0m16:56:43  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-11-03T16:56:43.814+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.815+0000] {subprocess.py:93} INFO - [0m16:56:43  [31mFailure in test unique_application_agg_customer_ref (models/presentation/schema.yml)[0m
+[2025-11-03T16:56:43.815+0000] {subprocess.py:93} INFO - [0m16:56:43    Got 1 result, configured to fail if != 0
+[2025-11-03T16:56:43.815+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.816+0000] {subprocess.py:93} INFO - [0m16:56:43    compiled code at target/compiled/bamboo_dbt_project/models/presentation/schema.yml/unique_application_agg_customer_ref.sql
+[2025-11-03T16:56:43.817+0000] {subprocess.py:93} INFO - [0m16:56:43
+[2025-11-03T16:56:43.817+0000] {subprocess.py:93} INFO - [0m16:56:43  Done. PASS=11 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=12
+[2025-11-03T16:56:44.480+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-03T16:56:44.481+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-03T16:56:44.491+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-03T16:56:44.494+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_duckdb_run, task_id=dbt_test, run_id=scheduled__2025-11-02T06:00:00+00:00, execution_date=20251102T060000, start_date=20251103T165640, end_date=20251103T165644
+[2025-11-03T16:56:44.503+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 124 for task dbt_test (Bash command failed. The command returned a non-zero exit code 1.; 438)
+[2025-11-03T16:56:44.515+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-03T16:56:44.527+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-03T16:56:44.528+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

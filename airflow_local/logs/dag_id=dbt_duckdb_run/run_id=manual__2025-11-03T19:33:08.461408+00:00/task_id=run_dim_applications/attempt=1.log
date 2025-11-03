@@ -1,0 +1,45 @@
+[2025-11-03T19:33:31.343+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-03T19:33:31.366+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_dim_applications manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T19:33:31.371+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_dim_applications manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T19:33:31.371+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-03T19:33:31.378+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_dim_applications> on 2025-11-03 19:33:08.461408+00:00
+[2025-11-03T19:33:31.383+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=342) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-03T19:33:31.384+0000] {standard_task_runner.py:64} INFO - Started process 343 to run task
+[2025-11-03T19:33:31.384+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'run_dim_applications', 'manual__2025-11-03T19:33:08.461408+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmppw78lma4']
+[2025-11-03T19:33:31.385+0000] {standard_task_runner.py:91} INFO - Job 149: Subtask run_dim_applications
+[2025-11-03T19:33:31.414+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.run_dim_applications manual__2025-11-03T19:33:08.461408+00:00 [running]> on host 91216cc0327b
+[2025-11-03T19:33:31.462+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='run_dim_applications' AIRFLOW_CTX_EXECUTION_DATE='2025-11-03T19:33:08.461408+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-03T19:33:08.461408+00:00'
+[2025-11-03T19:33:31.462+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-03T19:33:31.474+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-03T19:33:31.474+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt run --select dim_applications ']
+[2025-11-03T19:33:31.480+0000] {subprocess.py:86} INFO - Output:
+[2025-11-03T19:33:33.626+0000] {subprocess.py:93} INFO - [0m19:33:33  Running with dbt=1.10.13
+[2025-11-03T19:33:33.909+0000] {subprocess.py:93} INFO - [0m19:33:33  Registered adapter: duckdb=1.9.6
+[2025-11-03T19:33:34.054+0000] {subprocess.py:93} INFO - [0m19:33:34  [[33mWARNING[0m][DuplicateYAMLKeysDeprecation]: Deprecated functionality
+[2025-11-03T19:33:34.055+0000] {subprocess.py:93} INFO - Duplicate key 'column_name' in "<unicode string>", line 11, column 11 in file
+[2025-11-03T19:33:34.055+0000] {subprocess.py:93} INFO - `models/presentation/schema.yml`
+[2025-11-03T19:33:34.280+0000] {subprocess.py:93} INFO - [0m19:33:34  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-03T19:33:34.282+0000] {subprocess.py:93} INFO - [0m19:33:34
+[2025-11-03T19:33:34.283+0000] {subprocess.py:93} INFO - [0m19:33:34  Concurrency: 4 threads (target='dev')
+[2025-11-03T19:33:34.283+0000] {subprocess.py:93} INFO - [0m19:33:34
+[2025-11-03T19:33:34.490+0000] {subprocess.py:93} INFO - [0m19:33:34  1 of 1 START sql incremental model main_structured.dim_applications ............ [RUN]
+[2025-11-03T19:33:34.612+0000] {subprocess.py:93} INFO - [0m19:33:34  1 of 1 OK created sql incremental model main_structured.dim_applications ....... [[32mOK[0m in 0.12s]
+[2025-11-03T19:33:34.620+0000] {subprocess.py:93} INFO - [0m19:33:34
+[2025-11-03T19:33:34.620+0000] {subprocess.py:93} INFO - [0m19:33:34  Finished running 1 incremental model in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[2025-11-03T19:33:34.655+0000] {subprocess.py:93} INFO - [0m19:33:34
+[2025-11-03T19:33:34.656+0000] {subprocess.py:93} INFO - [0m19:33:34  [32mCompleted successfully[0m
+[2025-11-03T19:33:34.656+0000] {subprocess.py:93} INFO - [0m19:33:34
+[2025-11-03T19:33:34.657+0000] {subprocess.py:93} INFO - [0m19:33:34  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[2025-11-03T19:33:34.658+0000] {subprocess.py:93} INFO - [0m19:33:34  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-11-03T19:33:34.658+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-11-03T19:33:34.659+0000] {subprocess.py:93} INFO - - DuplicateYAMLKeysDeprecation: 1 occurrence
+[2025-11-03T19:33:34.659+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-11-03T19:33:34.660+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-11-03T19:33:34.660+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-11-03T19:33:34.661+0000] {subprocess.py:93} INFO - parsing.
+[2025-11-03T19:33:35.293+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-03T19:33:35.294+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-03T19:33:35.312+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_duckdb_run, task_id=run_dim_applications, run_id=manual__2025-11-03T19:33:08.461408+00:00, execution_date=20251103T193308, start_date=20251103T193331, end_date=20251103T193335
+[2025-11-03T19:33:35.356+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-03T19:33:35.374+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-03T19:33:35.375+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

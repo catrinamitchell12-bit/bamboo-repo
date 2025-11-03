@@ -1,0 +1,75 @@
+[2025-11-03T19:33:09.016+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-03T19:33:09.047+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_setup manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T19:33:09.052+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_setup manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T19:33:09.052+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-11-03T19:33:09.060+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_setup> on 2025-11-03 19:33:08.461408+00:00
+[2025-11-03T19:33:09.065+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=174) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-03T19:33:09.066+0000] {standard_task_runner.py:64} INFO - Started process 175 to run task
+[2025-11-03T19:33:09.065+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'dbt_setup', 'manual__2025-11-03T19:33:08.461408+00:00', '--job-id', '144', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpwttkaoiq']
+[2025-11-03T19:33:09.067+0000] {standard_task_runner.py:91} INFO - Job 144: Subtask dbt_setup
+[2025-11-03T19:33:09.104+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.dbt_setup manual__2025-11-03T19:33:08.461408+00:00 [running]> on host 91216cc0327b
+[2025-11-03T19:33:09.177+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='dbt_setup' AIRFLOW_CTX_EXECUTION_DATE='2025-11-03T19:33:08.461408+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-03T19:33:08.461408+00:00'
+[2025-11-03T19:33:09.178+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-03T19:33:09.214+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-03T19:33:09.216+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && python3 -m venv venv && /opt/***/dbt/venv/bin/pip install --upgrade pip && /opt/***/dbt/venv/bin/pip install dbt-duckdb']
+[2025-11-03T19:33:09.225+0000] {subprocess.py:86} INFO - Output:
+[2025-11-03T19:33:13.386+0000] {subprocess.py:93} INFO - Requirement already satisfied: pip in ./venv/lib/python3.12/site-packages (25.3)
+[2025-11-03T19:33:14.551+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-duckdb in ./venv/lib/python3.12/site-packages (1.9.6)
+[2025-11-03T19:33:14.554+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-common<2,>=1 in ./venv/lib/python3.12/site-packages (from dbt-duckdb) (1.35.0)
+[2025-11-03T19:33:14.554+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-adapters<2,>=1 in ./venv/lib/python3.12/site-packages (from dbt-duckdb) (1.17.3)
+[2025-11-03T19:33:14.554+0000] {subprocess.py:93} INFO - Requirement already satisfied: duckdb>=1.0.0 in ./venv/lib/python3.12/site-packages (from dbt-duckdb) (1.4.1)
+[2025-11-03T19:33:14.555+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-core>=1.8.0 in ./venv/lib/python3.12/site-packages (from dbt-duckdb) (1.10.13)
+[2025-11-03T19:33:14.555+0000] {subprocess.py:93} INFO - Requirement already satisfied: agate<2.0,>=1.0 in ./venv/lib/python3.12/site-packages (from dbt-adapters<2,>=1->dbt-duckdb) (1.9.1)
+[2025-11-03T19:33:14.555+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-protos<2.0,>=1.0.291 in ./venv/lib/python3.12/site-packages (from dbt-adapters<2,>=1->dbt-duckdb) (1.0.382)
+[2025-11-03T19:33:14.556+0000] {subprocess.py:93} INFO - Requirement already satisfied: mashumaro<3.15,>=3.9 in ./venv/lib/python3.12/site-packages (from mashumaro[msgpack]<3.15,>=3.9->dbt-adapters<2,>=1->dbt-duckdb) (3.14)
+[2025-11-03T19:33:14.557+0000] {subprocess.py:93} INFO - Requirement already satisfied: protobuf<7.0,>=6.0 in ./venv/lib/python3.12/site-packages (from dbt-adapters<2,>=1->dbt-duckdb) (6.33.0)
+[2025-11-03T19:33:14.557+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytz>=2015.7 in ./venv/lib/python3.12/site-packages (from dbt-adapters<2,>=1->dbt-duckdb) (2025.2)
+[2025-11-03T19:33:14.557+0000] {subprocess.py:93} INFO - Requirement already satisfied: typing-extensions<5.0,>=4.0 in ./venv/lib/python3.12/site-packages (from dbt-adapters<2,>=1->dbt-duckdb) (4.15.0)
+[2025-11-03T19:33:14.558+0000] {subprocess.py:93} INFO - Requirement already satisfied: Babel>=2.0 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (2.17.0)
+[2025-11-03T19:33:14.559+0000] {subprocess.py:93} INFO - Requirement already satisfied: isodate>=0.5.4 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (0.6.1)
+[2025-11-03T19:33:14.559+0000] {subprocess.py:93} INFO - Requirement already satisfied: leather>=0.3.2 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (0.4.0)
+[2025-11-03T19:33:14.560+0000] {subprocess.py:93} INFO - Requirement already satisfied: parsedatetime!=2.5,>=2.1 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (2.6)
+[2025-11-03T19:33:14.560+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-slugify>=1.2.1 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (8.0.4)
+[2025-11-03T19:33:14.560+0000] {subprocess.py:93} INFO - Requirement already satisfied: pytimeparse>=1.1.5 in ./venv/lib/python3.12/site-packages (from agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (1.1.8)
+[2025-11-03T19:33:14.562+0000] {subprocess.py:93} INFO - Requirement already satisfied: colorama<0.5,>=0.3.9 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (0.4.6)
+[2025-11-03T19:33:14.563+0000] {subprocess.py:93} INFO - Requirement already satisfied: deepdiff<9.0,>=7.0 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (8.6.1)
+[2025-11-03T19:33:14.563+0000] {subprocess.py:93} INFO - Requirement already satisfied: jinja2<4,>=3.1.3 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (3.1.6)
+[2025-11-03T19:33:14.564+0000] {subprocess.py:93} INFO - Requirement already satisfied: jsonschema<5.0,>=4.0 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (4.25.1)
+[2025-11-03T19:33:14.564+0000] {subprocess.py:93} INFO - Requirement already satisfied: pathspec<0.13,>=0.9 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (0.12.1)
+[2025-11-03T19:33:14.565+0000] {subprocess.py:93} INFO - Requirement already satisfied: python-dateutil<3.0,>=2.0 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (2.9.0.post0)
+[2025-11-03T19:33:14.565+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests<3.0.0 in ./venv/lib/python3.12/site-packages (from dbt-common<2,>=1->dbt-duckdb) (2.32.5)
+[2025-11-03T19:33:14.570+0000] {subprocess.py:93} INFO - Requirement already satisfied: orderly-set<6,>=5.4.1 in ./venv/lib/python3.12/site-packages (from deepdiff<9.0,>=7.0->dbt-common<2,>=1->dbt-duckdb) (5.5.0)
+[2025-11-03T19:33:14.573+0000] {subprocess.py:93} INFO - Requirement already satisfied: six in ./venv/lib/python3.12/site-packages (from isodate>=0.5.4->agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (1.17.0)
+[2025-11-03T19:33:14.575+0000] {subprocess.py:93} INFO - Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.12/site-packages (from jinja2<4,>=3.1.3->dbt-common<2,>=1->dbt-duckdb) (3.0.3)
+[2025-11-03T19:33:14.576+0000] {subprocess.py:93} INFO - Requirement already satisfied: attrs>=22.2.0 in ./venv/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2,>=1->dbt-duckdb) (25.4.0)
+[2025-11-03T19:33:14.576+0000] {subprocess.py:93} INFO - Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./venv/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2,>=1->dbt-duckdb) (2025.9.1)
+[2025-11-03T19:33:14.577+0000] {subprocess.py:93} INFO - Requirement already satisfied: referencing>=0.28.4 in ./venv/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2,>=1->dbt-duckdb) (0.37.0)
+[2025-11-03T19:33:14.577+0000] {subprocess.py:93} INFO - Requirement already satisfied: rpds-py>=0.7.1 in ./venv/lib/python3.12/site-packages (from jsonschema<5.0,>=4.0->dbt-common<2,>=1->dbt-duckdb) (0.28.0)
+[2025-11-03T19:33:14.582+0000] {subprocess.py:93} INFO - Requirement already satisfied: msgpack>=0.5.6 in ./venv/lib/python3.12/site-packages (from mashumaro[msgpack]<3.15,>=3.9->dbt-adapters<2,>=1->dbt-duckdb) (1.1.2)
+[2025-11-03T19:33:14.590+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.12/site-packages (from requests<3.0.0->dbt-common<2,>=1->dbt-duckdb) (3.4.4)
+[2025-11-03T19:33:14.590+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.12/site-packages (from requests<3.0.0->dbt-common<2,>=1->dbt-duckdb) (3.11)
+[2025-11-03T19:33:14.591+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.12/site-packages (from requests<3.0.0->dbt-common<2,>=1->dbt-duckdb) (2.5.0)
+[2025-11-03T19:33:14.591+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.12/site-packages (from requests<3.0.0->dbt-common<2,>=1->dbt-duckdb) (2025.10.5)
+[2025-11-03T19:33:14.603+0000] {subprocess.py:93} INFO - Requirement already satisfied: click<9.0,>=8.0.2 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (8.3.0)
+[2025-11-03T19:33:14.603+0000] {subprocess.py:93} INFO - Requirement already satisfied: networkx<4.0,>=2.3 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (3.5)
+[2025-11-03T19:33:14.604+0000] {subprocess.py:93} INFO - Requirement already satisfied: snowplow-tracker<2.0,>=1.0.2 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (1.1.0)
+[2025-11-03T19:33:14.604+0000] {subprocess.py:93} INFO - Requirement already satisfied: sqlparse<0.6.0,>=0.5.0 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (0.5.3)
+[2025-11-03T19:33:14.604+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-extractor<=0.6,>=0.5.0 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (0.6.0)
+[2025-11-03T19:33:14.605+0000] {subprocess.py:93} INFO - Requirement already satisfied: dbt-semantic-interfaces<0.10,>=0.9.0 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (0.9.0)
+[2025-11-03T19:33:14.606+0000] {subprocess.py:93} INFO - Requirement already satisfied: pydantic<3 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (2.12.3)
+[2025-11-03T19:33:14.606+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging>20.9 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (25.0)
+[2025-11-03T19:33:14.606+0000] {subprocess.py:93} INFO - Requirement already satisfied: pyyaml>=6.0 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (6.0.3)
+[2025-11-03T19:33:14.607+0000] {subprocess.py:93} INFO - Requirement already satisfied: daff>=1.3.46 in ./venv/lib/python3.12/site-packages (from dbt-core>=1.8.0->dbt-duckdb) (1.4.2)
+[2025-11-03T19:33:14.611+0000] {subprocess.py:93} INFO - Requirement already satisfied: importlib-metadata<9,>=6.0 in ./venv/lib/python3.12/site-packages (from dbt-semantic-interfaces<0.10,>=0.9.0->dbt-core>=1.8.0->dbt-duckdb) (8.7.0)
+[2025-11-03T19:33:14.612+0000] {subprocess.py:93} INFO - Requirement already satisfied: more-itertools<11.0,>=8.0 in ./venv/lib/python3.12/site-packages (from dbt-semantic-interfaces<0.10,>=0.9.0->dbt-core>=1.8.0->dbt-duckdb) (10.8.0)
+[2025-11-03T19:33:14.614+0000] {subprocess.py:93} INFO - Requirement already satisfied: zipp>=3.20 in ./venv/lib/python3.12/site-packages (from importlib-metadata<9,>=6.0->dbt-semantic-interfaces<0.10,>=0.9.0->dbt-core>=1.8.0->dbt-duckdb) (3.23.0)
+[2025-11-03T19:33:14.622+0000] {subprocess.py:93} INFO - Requirement already satisfied: annotated-types>=0.6.0 in ./venv/lib/python3.12/site-packages (from pydantic<3->dbt-core>=1.8.0->dbt-duckdb) (0.7.0)
+[2025-11-03T19:33:14.623+0000] {subprocess.py:93} INFO - Requirement already satisfied: pydantic-core==2.41.4 in ./venv/lib/python3.12/site-packages (from pydantic<3->dbt-core>=1.8.0->dbt-duckdb) (2.41.4)
+[2025-11-03T19:33:14.623+0000] {subprocess.py:93} INFO - Requirement already satisfied: typing-inspection>=0.4.2 in ./venv/lib/python3.12/site-packages (from pydantic<3->dbt-core>=1.8.0->dbt-duckdb) (0.4.2)
+[2025-11-03T19:33:14.642+0000] {subprocess.py:93} INFO - Requirement already satisfied: text-unidecode>=1.3 in ./venv/lib/python3.12/site-packages (from python-slugify>=1.2.1->agate<2.0,>=1.0->dbt-adapters<2,>=1->dbt-duckdb) (1.3)
+[2025-11-03T19:33:14.736+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-03T19:33:14.736+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-03T19:33:14.754+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_duckdb_run, task_id=dbt_setup, run_id=manual__2025-11-03T19:33:08.461408+00:00, execution_date=20251103T193308, start_date=20251103T193309, end_date=20251103T193314
+[2025-11-03T19:33:14.807+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-03T19:33:14.825+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-03T19:33:14.826+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

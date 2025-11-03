@@ -1,0 +1,60 @@
+[2025-11-02T21:37:33.300+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-02T21:37:33.321+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T21:37:33.326+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [queued]>
+[2025-11-02T21:37:33.326+0000] {taskinstance.py:2306} INFO - Starting attempt 3 of 3
+[2025-11-02T21:37:33.333+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_stg_loans> on 2025-11-01 06:00:00+00:00
+[2025-11-02T21:37:33.337+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=233) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-02T21:37:33.338+0000] {standard_task_runner.py:64} INFO - Started process 234 to run task
+[2025-11-02T21:37:33.337+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'run_stg_loans', 'scheduled__2025-11-01T06:00:00+00:00', '--job-id', '86', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpgzvpj5oa']
+[2025-11-02T21:37:33.339+0000] {standard_task_runner.py:91} INFO - Job 86: Subtask run_stg_loans
+[2025-11-02T21:37:33.365+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.run_stg_loans scheduled__2025-11-01T06:00:00+00:00 [running]> on host 9f558d84cecf
+[2025-11-02T21:37:33.408+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='run_stg_loans' AIRFLOW_CTX_EXECUTION_DATE='2025-11-01T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-01T06:00:00+00:00'
+[2025-11-02T21:37:33.408+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-02T21:37:33.418+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-02T21:37:33.420+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt run --select stg_loans ']
+[2025-11-02T21:37:33.428+0000] {subprocess.py:86} INFO - Output:
+[2025-11-02T21:37:35.971+0000] {subprocess.py:93} INFO - [0m21:37:35  Running with dbt=1.10.13
+[2025-11-02T21:37:36.344+0000] {subprocess.py:93} INFO - [0m21:37:36  Registered adapter: duckdb=1.9.6
+[2025-11-02T21:37:36.693+0000] {subprocess.py:93} INFO - [0m21:37:36  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-02T21:37:36.694+0000] {subprocess.py:93} INFO - [0m21:37:36
+[2025-11-02T21:37:36.695+0000] {subprocess.py:93} INFO - [0m21:37:36  Concurrency: 4 threads (target='dev')
+[2025-11-02T21:37:36.695+0000] {subprocess.py:93} INFO - [0m21:37:36
+[2025-11-02T21:37:36.970+0000] {subprocess.py:93} INFO - [0m21:37:36  1 of 1 START sql incremental model main_staging.stg_loans ...................... [RUN]
+[2025-11-02T21:37:37.052+0000] {subprocess.py:93} INFO - [0m21:37:37  1 of 1 ERROR creating sql incremental model main_staging.stg_loans ............. [[31mERROR[0m in 0.08s]
+[2025-11-02T21:37:37.059+0000] {subprocess.py:93} INFO - [0m21:37:37
+[2025-11-02T21:37:37.060+0000] {subprocess.py:93} INFO - [0m21:37:37  Finished running 1 incremental model in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[2025-11-02T21:37:37.091+0000] {subprocess.py:93} INFO - [0m21:37:37
+[2025-11-02T21:37:37.092+0000] {subprocess.py:93} INFO - [0m21:37:37  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-11-02T21:37:37.092+0000] {subprocess.py:93} INFO - [0m21:37:37
+[2025-11-02T21:37:37.093+0000] {subprocess.py:93} INFO - [0m21:37:37  [31mFailure in model stg_loans (models/staging/stg_loans.sql)[0m
+[2025-11-02T21:37:37.093+0000] {subprocess.py:93} INFO - [0m21:37:37    Runtime Error in model stg_loans (models/staging/stg_loans.sql)
+[2025-11-02T21:37:37.094+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name prd_customer_daily does not exist!
+[2025-11-02T21:37:37.094+0000] {subprocess.py:93} INFO -   Did you mean "pg_catalog.pg_constraint"?
+[2025-11-02T21:37:37.094+0000] {subprocess.py:93} INFO - 
+[2025-11-02T21:37:37.094+0000] {subprocess.py:93} INFO -   LINE 38: FROM "my_dbt"."raw"."prd_customer_daily"
+[2025-11-02T21:37:37.095+0000] {subprocess.py:93} INFO -                 ^
+[2025-11-02T21:37:37.095+0000] {subprocess.py:93} INFO - [0m21:37:37
+[2025-11-02T21:37:37.095+0000] {subprocess.py:93} INFO - [0m21:37:37    compiled code at target/compiled/bamboo_dbt_project/models/staging/stg_loans.sql
+[2025-11-02T21:37:37.095+0000] {subprocess.py:93} INFO - [0m21:37:37
+[2025-11-02T21:37:37.096+0000] {subprocess.py:93} INFO - [0m21:37:37  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[2025-11-02T21:37:40.898+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-11-02T21:37:40.898+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-02T21:37:40.906+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-11-02T21:37:40.910+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_duckdb_run, task_id=run_stg_loans, run_id=scheduled__2025-11-01T06:00:00+00:00, execution_date=20251101T060000, start_date=20251102T213733, end_date=20251102T213740
+[2025-11-02T21:37:40.920+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 86 for task run_stg_loans (Bash command failed. The command returned a non-zero exit code 1.; 234)
+[2025-11-02T21:37:40.952+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-11-02T21:37:40.966+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-02T21:37:40.968+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

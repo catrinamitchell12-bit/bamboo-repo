@@ -1,0 +1,35 @@
+[2025-11-03T16:56:24.391+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-03T16:56:24.413+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_fact_quote scheduled__2025-11-02T06:00:00+00:00 [queued]>
+[2025-11-03T16:56:24.418+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.run_fact_quote scheduled__2025-11-02T06:00:00+00:00 [queued]>
+[2025-11-03T16:56:24.418+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-11-03T16:56:24.425+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_fact_quote> on 2025-11-02 06:00:00+00:00
+[2025-11-03T16:56:24.429+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=312) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-03T16:56:24.430+0000] {standard_task_runner.py:64} INFO - Started process 313 to run task
+[2025-11-03T16:56:24.429+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'run_fact_quote', 'scheduled__2025-11-02T06:00:00+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmp_5h6xltg']
+[2025-11-03T16:56:24.431+0000] {standard_task_runner.py:91} INFO - Job 120: Subtask run_fact_quote
+[2025-11-03T16:56:24.456+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.run_fact_quote scheduled__2025-11-02T06:00:00+00:00 [running]> on host 8b2e3086e3f4
+[2025-11-03T16:56:24.500+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='run_fact_quote' AIRFLOW_CTX_EXECUTION_DATE='2025-11-02T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-11-02T06:00:00+00:00'
+[2025-11-03T16:56:24.501+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-03T16:56:24.510+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-03T16:56:24.511+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt run --select fact_quote ']
+[2025-11-03T16:56:24.515+0000] {subprocess.py:86} INFO - Output:
+[2025-11-03T16:56:26.599+0000] {subprocess.py:93} INFO - [0m16:56:26  Running with dbt=1.10.13
+[2025-11-03T16:56:26.867+0000] {subprocess.py:93} INFO - [0m16:56:26  Registered adapter: duckdb=1.9.6
+[2025-11-03T16:56:27.199+0000] {subprocess.py:93} INFO - [0m16:56:27  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-03T16:56:27.201+0000] {subprocess.py:93} INFO - [0m16:56:27
+[2025-11-03T16:56:27.201+0000] {subprocess.py:93} INFO - [0m16:56:27  Concurrency: 4 threads (target='dev')
+[2025-11-03T16:56:27.202+0000] {subprocess.py:93} INFO - [0m16:56:27
+[2025-11-03T16:56:27.391+0000] {subprocess.py:93} INFO - [0m16:56:27  1 of 1 START sql incremental model main_structured.fact_quote .................. [RUN]
+[2025-11-03T16:56:27.517+0000] {subprocess.py:93} INFO - [0m16:56:27  1 of 1 OK created sql incremental model main_structured.fact_quote ............. [[32mOK[0m in 0.12s]
+[2025-11-03T16:56:27.524+0000] {subprocess.py:93} INFO - [0m16:56:27
+[2025-11-03T16:56:27.524+0000] {subprocess.py:93} INFO - [0m16:56:27  Finished running 1 incremental model in 0 hours 0 minutes and 0.32 seconds (0.32s).
+[2025-11-03T16:56:27.556+0000] {subprocess.py:93} INFO - [0m16:56:27
+[2025-11-03T16:56:27.557+0000] {subprocess.py:93} INFO - [0m16:56:27  [32mCompleted successfully[0m
+[2025-11-03T16:56:27.557+0000] {subprocess.py:93} INFO - [0m16:56:27
+[2025-11-03T16:56:27.558+0000] {subprocess.py:93} INFO - [0m16:56:27  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[2025-11-03T16:56:28.165+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-03T16:56:28.166+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-03T16:56:28.183+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_duckdb_run, task_id=run_fact_quote, run_id=scheduled__2025-11-02T06:00:00+00:00, execution_date=20251102T060000, start_date=20251103T165624, end_date=20251103T165628
+[2025-11-03T16:56:28.207+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-03T16:56:28.223+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-11-03T16:56:28.224+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

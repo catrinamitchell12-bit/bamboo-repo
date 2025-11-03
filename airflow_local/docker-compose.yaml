@@ -14,12 +14,12 @@ x-airflow-common:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - ./../bamboo_dbt_project:/opt/airflow/dbt  # Mount your dbt project here
+    - ./../bamboo_dbt_project:/opt/airflow/dbt
     - ./../scripts:/opt/airflow/scripts
+    - ./../inbound_data:/opt/airflow/inbound_data
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     - postgres
-
 services:
   postgres:
     image: postgres:13

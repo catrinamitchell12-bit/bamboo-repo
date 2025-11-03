@@ -1,0 +1,67 @@
+[2025-11-03T21:46:02.907+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-11-03T21:46:02.927+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_test manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T21:46:02.932+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_duckdb_run.dbt_test manual__2025-11-03T19:33:08.461408+00:00 [queued]>
+[2025-11-03T21:46:02.932+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 4
+[2025-11-03T21:46:02.939+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_test> on 2025-11-03 19:33:08.461408+00:00
+[2025-11-03T21:46:02.943+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=1372) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-11-03T21:46:02.943+0000] {standard_task_runner.py:64} INFO - Started process 1373 to run task
+[2025-11-03T21:46:02.943+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_duckdb_run', 'dbt_test', 'manual__2025-11-03T19:33:08.461408+00:00', '--job-id', '162', '--raw', '--subdir', 'DAGS_FOLDER/dbt_dag.py', '--cfg-path', '/tmp/tmpt9n7tga5']
+[2025-11-03T21:46:02.945+0000] {standard_task_runner.py:91} INFO - Job 162: Subtask dbt_test
+[2025-11-03T21:46:02.969+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_duckdb_run.dbt_test manual__2025-11-03T19:33:08.461408+00:00 [running]> on host c1bcdd4772d6
+[2025-11-03T21:46:03.014+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_duckdb_run' AIRFLOW_CTX_TASK_ID='dbt_test' AIRFLOW_CTX_EXECUTION_DATE='2025-11-03T19:33:08.461408+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-11-03T19:33:08.461408+00:00'
+[2025-11-03T21:46:03.014+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-11-03T21:46:03.024+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-11-03T21:46:03.024+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && source venv/bin/activate && dbt test ']
+[2025-11-03T21:46:03.029+0000] {subprocess.py:86} INFO - Output:
+[2025-11-03T21:46:05.109+0000] {subprocess.py:93} INFO - [0m21:46:05  Running with dbt=1.10.13
+[2025-11-03T21:46:05.379+0000] {subprocess.py:93} INFO - [0m21:46:05  Registered adapter: duckdb=1.9.6
+[2025-11-03T21:46:05.521+0000] {subprocess.py:93} INFO - [0m21:46:05  [[33mWARNING[0m][DuplicateYAMLKeysDeprecation]: Deprecated functionality
+[2025-11-03T21:46:05.521+0000] {subprocess.py:93} INFO - Duplicate key 'column_name' in "<unicode string>", line 11, column 11 in file
+[2025-11-03T21:46:05.521+0000] {subprocess.py:93} INFO - `models/presentation/schema.yml`
+[2025-11-03T21:46:05.747+0000] {subprocess.py:93} INFO - [0m21:46:05  Found 6 models, 12 data tests, 1 source, 444 macros
+[2025-11-03T21:46:05.750+0000] {subprocess.py:93} INFO - [0m21:46:05
+[2025-11-03T21:46:05.750+0000] {subprocess.py:93} INFO - [0m21:46:05  Concurrency: 4 threads (target='dev')
+[2025-11-03T21:46:05.751+0000] {subprocess.py:93} INFO - [0m21:46:05
+[2025-11-03T21:46:05.913+0000] {subprocess.py:93} INFO - [0m21:46:05  1 of 12 START test not_null_application_agg_customer_ref ....................... [RUN]
+[2025-11-03T21:46:05.914+0000] {subprocess.py:93} INFO - [0m21:46:05  2 of 12 START test not_null_customer_detail_customer_ref ....................... [RUN]
+[2025-11-03T21:46:05.914+0000] {subprocess.py:93} INFO - [0m21:46:05  3 of 12 START test not_null_dim_applications_load_timestamp .................... [RUN]
+[2025-11-03T21:46:05.915+0000] {subprocess.py:93} INFO - [0m21:46:05  4 of 12 START test not_null_dim_customer_load_timestamp ........................ [RUN]
+[2025-11-03T21:46:05.996+0000] {subprocess.py:93} INFO - [0m21:46:05  2 of 12 PASS not_null_customer_detail_customer_ref ............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T21:46:05.997+0000] {subprocess.py:93} INFO - [0m21:46:05  1 of 12 PASS not_null_application_agg_customer_ref ............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T21:46:06.000+0000] {subprocess.py:93} INFO - [0m21:46:06  4 of 12 PASS not_null_dim_customer_load_timestamp .............................. [[32mPASS[0m in 0.08s]
+[2025-11-03T21:46:06.001+0000] {subprocess.py:93} INFO - [0m21:46:06  3 of 12 PASS not_null_dim_applications_load_timestamp .......................... [[32mPASS[0m in 0.08s]
+[2025-11-03T21:46:06.003+0000] {subprocess.py:93} INFO - [0m21:46:06  5 of 12 START test not_null_fact_quote_load_timestamp .......................... [RUN]
+[2025-11-03T21:46:06.004+0000] {subprocess.py:93} INFO - [0m21:46:06  6 of 12 START test not_null_stg_loans_quote_ref ................................ [RUN]
+[2025-11-03T21:46:06.004+0000] {subprocess.py:93} INFO - [0m21:46:06  7 of 12 START test unique_application_agg_quote_ref ............................ [RUN]
+[2025-11-03T21:46:06.006+0000] {subprocess.py:93} INFO - [0m21:46:06  8 of 12 START test unique_customer_detail_customer_ref ......................... [RUN]
+[2025-11-03T21:46:06.060+0000] {subprocess.py:93} INFO - [0m21:46:06  6 of 12 PASS not_null_stg_loans_quote_ref ...................................... [[32mPASS[0m in 0.05s]
+[2025-11-03T21:46:06.061+0000] {subprocess.py:93} INFO - [0m21:46:06  5 of 12 PASS not_null_fact_quote_load_timestamp ................................ [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.064+0000] {subprocess.py:93} INFO - [0m21:46:06  7 of 12 PASS unique_application_agg_quote_ref .................................. [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.066+0000] {subprocess.py:93} INFO - [0m21:46:06  8 of 12 PASS unique_customer_detail_customer_ref ............................... [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.067+0000] {subprocess.py:93} INFO - [0m21:46:06  9 of 12 START test unique_dim_applications_quote_ref ........................... [RUN]
+[2025-11-03T21:46:06.067+0000] {subprocess.py:93} INFO - [0m21:46:06  10 of 12 START test unique_dim_customer_customer_ref ........................... [RUN]
+[2025-11-03T21:46:06.069+0000] {subprocess.py:93} INFO - [0m21:46:06  11 of 12 START test unique_fact_quote_quote_ref ................................ [RUN]
+[2025-11-03T21:46:06.072+0000] {subprocess.py:93} INFO - [0m21:46:06  12 of 12 START test unique_stg_loans_quote_ref ................................. [RUN]
+[2025-11-03T21:46:06.131+0000] {subprocess.py:93} INFO - [0m21:46:06  9 of 12 PASS unique_dim_applications_quote_ref ................................. [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.132+0000] {subprocess.py:93} INFO - [0m21:46:06  11 of 12 PASS unique_fact_quote_quote_ref ...................................... [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.133+0000] {subprocess.py:93} INFO - [0m21:46:06  10 of 12 PASS unique_dim_customer_customer_ref ................................. [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.137+0000] {subprocess.py:93} INFO - [0m21:46:06  12 of 12 PASS unique_stg_loans_quote_ref ....................................... [[32mPASS[0m in 0.06s]
+[2025-11-03T21:46:06.143+0000] {subprocess.py:93} INFO - [0m21:46:06
+[2025-11-03T21:46:06.144+0000] {subprocess.py:93} INFO - [0m21:46:06  Finished running 12 data tests in 0 hours 0 minutes and 0.39 seconds (0.39s).
+[2025-11-03T21:46:06.180+0000] {subprocess.py:93} INFO - [0m21:46:06
+[2025-11-03T21:46:06.180+0000] {subprocess.py:93} INFO - [0m21:46:06  [32mCompleted successfully[0m
+[2025-11-03T21:46:06.181+0000] {subprocess.py:93} INFO - [0m21:46:06
+[2025-11-03T21:46:06.182+0000] {subprocess.py:93} INFO - [0m21:46:06  Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[2025-11-03T21:46:06.182+0000] {subprocess.py:93} INFO - [0m21:46:06  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-11-03T21:46:06.182+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-11-03T21:46:06.183+0000] {subprocess.py:93} INFO - - DuplicateYAMLKeysDeprecation: 1 occurrence
+[2025-11-03T21:46:06.184+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-11-03T21:46:06.185+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-11-03T21:46:06.186+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-11-03T21:46:06.187+0000] {subprocess.py:93} INFO - parsing.
+[2025-11-03T21:46:06.813+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-11-03T21:46:06.814+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-11-03T21:46:06.830+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_duckdb_run, task_id=dbt_test, run_id=manual__2025-11-03T19:33:08.461408+00:00, execution_date=20251103T193308, start_date=20251103T214602, end_date=20251103T214606
+[2025-11-03T21:46:06.846+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-11-03T21:46:06.857+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-11-03T21:46:06.858+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
