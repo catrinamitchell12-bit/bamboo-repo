@@ -7,7 +7,7 @@
 WITH deduplicated_previous_loan as (
 select
     *
-from ad_hoc.currency.applications
+from {{ ref('dim_applications') }}
 qualify row_number() over(partition by application_ref, loan_ref order by event_timestamp desc) = 1
 )
 
@@ -28,5 +28,5 @@ SELECT
     application.bills_check,
     application.event_timestamp
 FROM deduplicated_previous_loan application
-JOIN ad_hoc.currency.quote quote
+JOIN {{ ref('fact_quote') }} quote
 ON application.quote_ref = quote.quote_ref
